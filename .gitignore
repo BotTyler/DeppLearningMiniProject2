@@ -1,3 +1,8 @@
 *.zip
 dataset
 sim
+Data
+__pycache__
+model
+roicropped
+testing_data
