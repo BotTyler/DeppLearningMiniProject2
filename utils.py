@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Nov  2 18:27:34 2022
-
-@author: akhil_kk
-
-"""
 
 import pandas as pd
 from tensorflow import keras
@@ -14,25 +8,6 @@ from tensorflow.keras.preprocessing.image import load_img
 
 
 class dataset(keras.utils.Sequence) :
-    """
-        This module is a custom keras sequence generator (dataset)
-    
-    the datset is the class created from keras.utils.Sequence class
-    
-    The constructor of this class expect the following parameters:
-    1. The CSV file path, which represent the driving log dataset
-    2. batch size : default value is 32
-    3. count: for selecting range of elements to be selected from the csv file
-         * 0-count elements will be considered by the sequence generator (count should be less than total raws in csv file)
-         * if count is not provided then whole elements will be considered by the generator
-     
-    4. imgsize: the size in which the image to be loaded (height,width)
-          * if not provided then the img size will be derived from the image itself
-    
-    5. Output sequence will be
-         x= centre camera image (numpy array)
-         y= steering angle (float value)
-    """
     
     def __init__(self,csvfile,batchsize=32,count=None,imgsize=None):
        
